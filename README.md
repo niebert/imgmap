@@ -5,6 +5,9 @@ and you can have full control over the generated HTML code as well.
 
 ![Online Image Editor](https://niebert.github.io/imgmap)
 
+The Online Image Editor runs in your browser and the images are not uploaded to any server. You can download the repository.
+
+
 
 ## Purpose of the Fork
 change the User Interface provided by Adam Maschek:
@@ -21,6 +24,14 @@ and not as fast as the native canvas drawing, so expect some lags in IE.
 The editor is currently tested to work in Chrome, Firefox, Safari, Opera 9+ and IE 6+.
 
 ![Screenshot of the Image Editor](img/imgeditor_screenshot.png)
+
+
+## Links
+* [Online Image Editor](https://niebert.github.io/imgmap)
+* [Wikiversity support for Image Maps in MediaWiki](https://en.wikiversity.org/wiki/GNU_Image_Manipulation_Program_(GIMP)/Image_maps)
+* [Source code of Image Editor by Adam Maschek](https://github.com/maschek/imgmap)
+* [Adapted Source code of Image Editor by Adam Maschek](https://github.com/niebert/imgmap) in docs folder
+* [Download Link of Adapted ImageMap Editor](https://github.com/niebert/imgmap/archive/master.zip) 
 
 ## Acknowledgement
 Thank you to Adam Maschek for sharing the code for Javascript ImageMap Editor on Github
