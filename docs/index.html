@@ -12,7 +12,10 @@
     <link rel="stylesheet" href="css/suckerfish.css" type="text/css" />
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 
+    <!-- 
     <script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
+	-->
+	<script src="js/jquery-1.12.3.min.js"></script>
 
     <title>Online Image Map Editor </title>
 </head>
@@ -22,6 +25,7 @@
     <div id="maindivcontainer">
         <div id="maindiv">
             <h1 id="titletext">Online Image Map Editor</h1>
+            <i>The Editor creates the image in your browser - no images are uploaded to any server</i>
 			<hr/>
             <div id="div_content">
 
@@ -101,6 +105,8 @@
                                             <!--
                                             <img src="img/html.gif" onclick="gui_htmlShow()" alt="Get image map HTML" title="Get image map HTML" style="margin: 0 2px; cursor: pointer;" />
                                             -->
+                                            <a href="" target="_blank">
+                                       
                                         </div>
                                     </td>
                                     <td>
@@ -155,7 +161,9 @@
 
                 <script src="js/imgmap.js"></script>
                 <script src="js/default_interface.js"></script>
-                <script src="https://sdk.amazonaws.com/js/aws-sdk-2.5.5.min.js"></script>
+                
+                <!-- <script src="https://sdk.amazonaws.com/js/aws-sdk-2.5.5.min.js"></script> -->
+                <script src="js/aws-sdk-2.js"></script>
                 <script src="js/u.js"></script>
 
 
@@ -169,11 +177,13 @@
                <font size="-1">
        
                 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/">
-                        <img alt="Creative Commons License" border="0" src="/pics/cc.jpg" /> Some Rights Reserved</a>
+                        <img alt="Creative Commons License" border="0" src="img/cc.jpg" /> Some Rights Reserved</a>
 				---
    				  Problems? <a href="https://github.com/niebert/imgmap/issues">Send bug report</a>
+   				---
+   				  <b><a href="https://github.com/niebert/imgmap/archive/master.zip" target="_blank">Download</a></b>
    				  <hr/>
-   				  Adated User Interface by NieBert as Fork on GitHub (2017)<br/>
+   				  Adapted User Interface by NieBert as <a href="https://www.github.com/niebert/imgmap" target="_blank">Fork on GitHub (2017)</a><br/>
    				  <a href="https://github.com/maschek/imgmap" target="_blank">Code based on Javascript ImageMap Editor by Adam Maschek on GitHub</a>
                </font>
             </div>
