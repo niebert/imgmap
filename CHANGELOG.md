@@ -1,4 +1,6 @@
 # Changelog #
+Version 2.2 Forked
+  * User interface updated and settings are defined to export to a MediaWiki as default.
 
 Version 2.2
   * Updated excanvas to [r3](https://code.google.com/p/imgmap/source/detail?r=3) - should solve IE8 problems

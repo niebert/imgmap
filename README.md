@@ -31,15 +31,13 @@ The editor is currently tested to work in Chrome, Firefox, Safari, Opera 9+ and 
 * [Wikiversity support for Image Maps in MediaWiki](https://en.wikiversity.org/wiki/GNU_Image_Manipulation_Program_(GIMP)/Image_maps)
 * [Source code of Image Editor by Adam Maschek](https://github.com/maschek/imgmap)
 * [Adapted Source code of Image Editor by Adam Maschek](https://github.com/niebert/imgmap) in docs folder
-* [Download Link of Adapted ImageMap Editor](https://github.com/niebert/imgmap/archive/master.zip) 
+* [Download Link of Adapted ImageMap Editor](https://github.com/niebert/imgmap/archive/master.zip)
 
 ## Acknowledgement
-Thank you to Adam Maschek for sharing the code for Javascript ImageMap Editor on Github
-See the online editor at: http://www.maschek.hu/imagemap/imgmap
+Special thanks to [Adam Maschek](https://github.com/maschek) for sharing the code for Javascript ImageMap Editor on Github.
+See the original online editor at: http://www.maschek.hu/imagemap/imgmap
 
-The image map editor is based on the code of Adam Maschek.
-
+The forked image map editor tailored for [Wikiversity](https://en.wikiversity.org/wiki/Risk_Literacy/Real_World_Labs/web-based_exploration).
 
 ## Note:
 The code repository was originally hosted at google code and migrated to github on March 30, 2015
-
