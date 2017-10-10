@@ -3,7 +3,7 @@
 With the imagemap editor you can easily draw ALL the standard image map shapes (rectangle, circle, polygon),
 and you can have full control over the generated HTML code as well.
 
-![Online Image Editor](https://niebert.github.io/imgmap)
+![Online Image Editor](https://niebert.github.io/imgmap/index.html)
 
 The Online Image Editor runs in your browser and the images are not uploaded to any server. You can download the repository.
 
@@ -37,7 +37,7 @@ The editor is currently tested to work in Chrome, Firefox, Safari, Opera 9+ and 
 Special thanks to [Adam Maschek](https://github.com/maschek) for sharing the code for Javascript ImageMap Editor on Github.
 See the original online editor at: http://www.maschek.hu/imagemap/imgmap
 
-The forked image map editor tailored for [Wikiversity](https://en.wikiversity.org/wiki/Risk_Literacy/Real_World_Labs/web-based_exploration).
+The forked image map editor was tailored for [Wikiversity](https://en.wikiversity.org/wiki/Risk_Literacy/Real_World_Labs/web-based_exploration).
 
 ## Note:
 The code repository was originally hosted at google code and migrated to github on March 30, 2015
