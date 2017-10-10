@@ -240,7 +240,7 @@ function gui_addArea(id) {
 	}
 	temp+= '</select>';
 	temp+= 'Coords: <input type="text" name="img_coords" class="img_coords" value="">';
-	temp+= 'Href: <input type="text" name="img_href" class="img_href" value="">';
+	temp+= 'Link: <input type="text" name="img_href" class="img_href" value="">';
 	temp+= 'Alt: <input type="text" name="img_alt" class="img_alt" value="">';
 	temp+= 'Target: <select name="img_target" class="img_target">';
 	temp+= '<option value=""  >&lt;not set&gt;</option>';
