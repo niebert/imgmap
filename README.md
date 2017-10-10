@@ -3,7 +3,7 @@
 With the imagemap editor you can easily draw ALL the standard image map shapes (rectangle, circle, polygon),
 and you can have full control over the generated HTML code as well.
 
-![Online Image Editor](https://niebert.github.io/imgmap/index.html)
+* [Online Image Editor](https://niebert.github.io/imgmap/index.html)
 
 The Online Image Editor runs in your browser and the images are not uploaded to any server. You can download the repository.
 
