@@ -344,6 +344,9 @@ function gui_htmlChanged(str) {
 		else if (out == 'wiki') {
 			document.getElementById('html_container').value = output_wiki();
 		}
+		else if (out == '360panorama') {
+			document.getElementById('html_container').value = output_360panorama();
+		}
 		else {
 			document.getElementById('html_container').value = str;
 		}
@@ -644,6 +647,42 @@ desc bottom-left
 
  */
 function output_wiki() {
+	var html, coords;
+	html = '<imagemap>';
+	if (typeof myimgmap.pic != 'undefined') {
+		//html+= 'Image:' + myimgmap.pic.src + '|' + myimgmap.pic.title + '\n';
+		html+= 'Image:' + myimgmap.getMapId() + '|' + myimgmap.pic.title + '\n';
+	}
+
+	//foreach areas
+	for (var i=0; i<myimgmap.areas.length; i++) {
+		if (myimgmap.areas[i]) {
+			if (myimgmap.areas[i].shape && myimgmap.areas[i].shape != 'undefined') {
+				coords = myimgmap.areas[i].lastInput.split(',').join(' ');
+				html+= myimgmap.areas[i].shape + ' ' + coords + ' [[' + myimgmap.areas[i].ahref + '|' + myimgmap.areas[i].aalt + ']]\n';
+			}
+		}
+	}
+	html+= '#' + myimgmap.waterMark + '\n</imagemap>';
+	//alert(html);
+	return html;
+}
+
+/**
+ *	Grab the areas array and make wiki output.
+ *	@link	http://www.mediawiki.org/wiki/Extension:ImageMap
+ *	<imagemap>
+Image:Foo.jpg|200px|picture of a foo
+poly 131 45 213 41 210 110 127 109 [[Display]]
+poly 104 126 105 171 269 162 267 124 [[Keyboard]]
+rect 15 95 94 176   [[Foo type A]]
+# A comment, this line is ignored
+circle 57 57 20    [[Foo type B]]
+desc bottom-left
+</imagemap>
+
+ */
+function output_360panorama() {
 	var html, coords;
 	html = '<imagemap>';
 	if (typeof myimgmap.pic != 'undefined') {
