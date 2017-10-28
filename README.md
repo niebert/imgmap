@@ -14,7 +14,8 @@ change the User Interface provided by Adam Maschek:
 * set the default imagemap main export format to the MediaWiki
 * use the javascript code in an HTML file the docs/ folder in GitHub,
 * rename buttons and change layout for the Source Selector,
-* add a "Create Image Map" Button to the user interface
+* add a "Create Image Map" Button to the user interface.
+* create a WebApp that works offline - no internet and server connectivity neccessary, if local images are used. Just [download ZIP](https://github.com/niebert/imgmap/archive/master.zip) and start ___index.html___ in ___/docs___ folder.
 
 ## Technical Description
 The editor natively uses the canvas HTML element to draw the shapes on a given image.
@@ -32,6 +33,7 @@ The editor is currently tested to work in Chrome, Firefox, Safari, Opera 9+ and 
 * [Source code of Image Editor by Adam Maschek](https://github.com/maschek/imgmap)
 * [Adapted Source code of Image Editor by Adam Maschek](https://github.com/niebert/imgmap) in docs folder
 * [Download Link of Adapted ImageMap Editor](https://github.com/niebert/imgmap/archive/master.zip)
+* [Loading Images into a HTML5 WebApp](https://www.html5rocks.com/en/tutorials/file/dndfiles/) needed for uploading local images provided by  Eric Bidelman
 
 ## Acknowledgement
 Special thanks to [Adam Maschek](https://github.com/maschek) for sharing the code for Javascript ImageMap Editor on Github.

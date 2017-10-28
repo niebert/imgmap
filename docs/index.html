@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/suckerfish.css" type="text/css" />
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 
-    <!-- 
+    <!--
     <script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
 	-->
 	<script src="js/jquery-1.12.3.min.js"></script>
@@ -44,27 +44,35 @@
                                     <table id="upload_table">
                                         <tr>
                                             <td>
+                                                <!--
                                                 <input type="file" id="file-chooser" size="13" style="width: 150px;" />
+                                                <input type="file" id="files" name="files[]" multiple /> -->
+                                                <input type="file" id="file-chooser" name="files[]"  />
                                             </td>
                                             <td>
-                                                <input type="button" id="upload-button" value="Upload" style="width: auto;" />
+                                              </td>
+                                              <td>
+                                                <div id="upload_div"  style="display:none">
+                                                    <input type="button" id="upload-local-button" value="Upload" style="width: auto" />
+                                                </div>
+                                              </td>
+                                            <td>
                                             </td>
                                         </tr>
                                     </table>
-                                    <div id="upload_result" style="display: none"></div>
+                                      <div id="upload_result" style="display:none"></div>
                                 </div>
 
                             </div>
-                            <button id="bSourceInternet" onclick="gui_loadImage(document.getElementById('src').getAttribute('rel'));return false;" class="source_accept">Load Image</button>
-                            <br/>
+                            <button id="bSourceInternet" onclick="gui_loadImage(document.getElementById('src').getAttribute('rel'));return false;" class="source_accept" style="visibility:hidden">Load Image</button>
+                            <output id="list"></output>
                             <hr/>
 
                             <div class="source_desc">(2) an image on the Internet:</div>
                             <div class="source_url">
                                 <input type="txt" id="source_url2" value="http://">
                             </div>
-                            <button id="bSourceInternet" onclick="gui_loadImage(document.getElementById('source_url2').value);return false;" class="source_accept">
- Load Image</button>
+                            <button id="bSourceInternet" onclick="gui_loadImage(document.getElementById('source_url2').value);return false;" class="source_accept">Load Image</button>
                             <br/>
                             <hr/>
 
@@ -103,7 +111,7 @@
                                             <!--
                                             <img src="img/html.gif" onclick="gui_htmlShow()" alt="Get image map HTML" title="Get image map HTML" style="margin: 0 2px; cursor: pointer;" />
                                             -->
-                                       
+
                                         </div>
                                     </td>
                                     <td>
@@ -157,24 +165,22 @@
                         </div>
                     </fieldset>
                 </form>
-
+                <div id="sample_image_div" style="display:none">
+                  <img id="sample1"  src="img/sample1.jpg">
+                  <img id="sample2"  src="img/sample2.jpg">
+                  <img id="sample3"  src="img/sample3.jpg">
+                  <img id="sample4"  src="img/sample4.jpg">
+                </div>
                 <script src="js/imgmap.js"></script>
+                <script src="js/imgupload.js"></script>
                 <script src="js/default_interface.js"></script>
-                
-                <!-- <script src="https://sdk.amazonaws.com/js/aws-sdk-2.5.5.min.js"></script> -->
-                <script src="js/aws-sdk-2.js"></script>
-                <script src="js/u.js"></script>
-
-
-
-
                 <br/>
 
             </div>
 			<hr/>
             <div id="div_footer" align="center">
                <font size="-1">
-       
+
                 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/">
                         <img alt="Creative Commons License" border="0" src="img/cc.jpg" /> Some Rights Reserved</a>
 				---
@@ -191,7 +197,7 @@
     </div>
 
 
- 
+
 </body>
 
 </html>
