@@ -472,6 +472,7 @@ function gui_loadImage(src) {
 }
 
 function gui_outputChanged() {
+	console.log("gui_outputChanged()-Call");
 	var temp, i;
 	var clipboard_enabled = (window.clipboardData || typeof air == 'object');
 	var output = document.getElementById('dd_output').value;
@@ -646,7 +647,8 @@ function output_wiki() {
 	var html, coords;
 	html = '<imagemap>';
 	if (typeof myimgmap.pic != 'undefined') {
-		html+= 'Image:' + myimgmap.pic.src + '|' + myimgmap.pic.title + '\n';
+		//html+= 'Image:' + myimgmap.pic.src + '|' + myimgmap.pic.title + '\n';
+		html+= 'Image:' + myimgmap.getMapId() + '|' + myimgmap.pic.title + '\n';
 	}
 
 	//foreach areas

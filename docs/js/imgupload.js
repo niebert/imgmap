@@ -66,6 +66,8 @@ function handleFileSelectInfo(evt) {
 					//gui_loadImage(e.target.result);
 					// set ImageMap Editor Picture to
 					myimgmap.pic = vIMG;
+					myimgmap.mapname = escape(theFile.name);
+					myimgmap.mapid = escape(theFile.name);
 					myimgmap.assignEvents2Image();
 			  };
       })(f);

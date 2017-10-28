@@ -99,8 +99,9 @@ function imgmap(config) {
 	/**	holds the id of the actively edited map, use getMapIdto read it */
 	this.mapid      = '';
 
+
 	/** watermark to attach to output */
-	this.waterMark  = '<!-- Created by Online Image Map Editor based on development by Adam Maschek (https://github.com/maschek/imgmap) -->';
+	this.waterMark  = '<!-- Created by forked Online Image Map Editor https://niebert.github.io/imgmap -->';
 
 	/** global scale of areas (1-normal, 2-doubled, 0.5-half, etc.) */
 	this.globalscale = 1;
@@ -604,6 +605,9 @@ imgmap.prototype.loadStrings = function(obj) {
 	}
 };
 
+/**
+ *	This function assigns events to the image in the pic_container.
+ */
 imgmap.prototype.assignEvents2Image = function() {
 	this.addEvent(this.pic, 'mousedown', this.eventHandlers.img_mousedown = this.img_mousedown.bind(this));
 	this.addEvent(this.pic, 'mouseup',   this.eventHandlers.img_mouseup = this.img_mouseup.bind(this));
@@ -629,10 +633,7 @@ imgmap.prototype.loadImage = function(img, imgw, imgh) {
 			this.pic = document.createElement('IMG');
 			this.pic_container.appendChild(this.pic);
 			//event handler hooking - only at the first load
-			this.addEvent(this.pic, 'mousedown', this.eventHandlers.img_mousedown = this.img_mousedown.bind(this));
-			this.addEvent(this.pic, 'mouseup',   this.eventHandlers.img_mouseup = this.img_mouseup.bind(this));
-			this.addEvent(this.pic, 'mousemove', this.eventHandlers.img_mousemove = this.img_mousemove.bind(this));
-			this.pic.style.cursor = this.config.cursor_default;
+			this.assignEvents2Image();
 		}
 		//img ='../../'+img;
 		this.log('Loading image: ' + img, 0);
@@ -832,6 +833,7 @@ imgmap.prototype.getMapInnerHTML = function(flags) {
 	var html, coords;
 	html = '';
 	//foreach area properties
+	console.log("getMapInnerHTML()-Call: Create Standard ImageMap for Preview");
 	for (var i=0, le = this.areas.length; i<le; i++) {
 		if (this.areas[i]) {
 			if (this.areas[i].shape && this.areas[i].shape != 'undefined') {
