@@ -1,5 +1,5 @@
 # Changelog #
-Version 2.2 Forked
+Version 2.3 Forked by niebert
   * User interface updated and settings are defined to export to a MediaWiki as default.
 
 Version 2.2
