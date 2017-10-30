@@ -9,6 +9,12 @@ function el(pID) {
 	return document.getElementById(pID)
 }
 
+function setLoadImageURL(pFilename) {
+	var vURL = "https://en.wikipedia.org/wiki/Special:Redirect/file/"+pFilename;
+	console.log("setLoadImageURL('"+vURL+"')");
+	el("source_url2").value = vURL;
+}
+
 if (window.File && window.FileReader && window.FileList && window.Blob) {
   console.log("FileReader API is supported");
 } else {

@@ -64,13 +64,14 @@
                                 </div>
 
                             </div>
-                            <button id="bSourceInternet" onclick="gui_loadImage(document.getElementById('src').getAttribute('rel'));return false;" class="source_accept" style="visibility:hidden">Load Image</button>
+                            <button id="bSourceLocal" onclick="gui_loadImage(document.getElementById('src').getAttribute('rel'));return false;" class="source_accept" style="visibility:hidden">Load Image</button>
                             <output id="list"></output>
                             <hr/>
 
                             <div class="source_desc">(2) an image on the Internet:</div>
                             <div class="source_url">
-                                <input type="txt" id="source_url2" value="http://">
+                              <input type="txt" id="source_url2" size="40" value="http://">
+                              <b>WikiMedia File:</b> <input type="txt" style="width:200px" id="mediawiki_source" value="" onchange="setLoadImageURL(this.value)"><a href="javascript:el('mediawiki_source').value='Annweiler_Queich_05.JPG';setLoadImageURL('Annweiler_Queich_05.JPG')">[&lt;]</a>
                             </div>
                             <button id="bSourceInternet" onclick="gui_loadImage(document.getElementById('source_url2').value);return false;" class="source_accept">Load Image</button>
                             <br/>

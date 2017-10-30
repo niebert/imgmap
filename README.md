@@ -15,7 +15,7 @@ change the User Interface provided by Adam Maschek:
 * use the javascript code in an HTML file the docs/ folder in GitHub,
 * rename buttons and change layout for the Source Selector,
 * add a "Create Image Map" Button to the user interface.
-* upload files with [FileReader API](https://developer.mozilla.org/de/docs/Web/API/FileReader) - see [Code-Pen Example]](https://codepen.io/matt-west/pen/KjEHg) 
+* upload files with [FileReader API](https://developer.mozilla.org/de/docs/Web/API/FileReader) - see [Code-Pen Example]](https://codepen.io/matt-west/pen/KjEHg)
 * create a WebApp that works offline - no internet and server connectivity neccessary, if local images are used. Just [download ZIP](https://github.com/niebert/imgmap/archive/master.zip) and start ___index.html___ in ___/docs___ folder.
 
 ## Technical Description
@@ -27,6 +27,10 @@ The editor is currently tested to work in Chrome, Firefox, Safari, Opera 9+ and 
 
 ![Screenshot of the Image Editor](img/imgeditor_screenshot.png)
 
+## Images Download wget
+
+* The link ___https://en.wikipedia.org/wiki/Special:Redirect/file/Annweiler_Rathaus.JPG___ refers to the current version of the image ___Annweiler_Rathaus.JPG___.
+* Size of image can be determined by ___http://en.wikipedia.org/wiki/Special:FilePath/Annweiler_Rathaus.JPG?width=300___ (here resize the width to 300 pixels.
 
 ## Links
 * [Online Image Editor](https://niebert.github.io/imgmap)
