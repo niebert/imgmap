@@ -547,14 +547,14 @@ function gui_outputChanged() {
 		temp+= '(<a href="http://www.mediawiki.org/wiki/Extension:ImageMap">read more</a>).';
 	}
 	else if (output == 'panorama') {
-		temp = 'This is the generated image map can be used to for the Panorama360 ImageMap. ';
-		temp+= 'Click into the textarea below and press Ctrl+C to copy the code to your clipboard. ';
+		temp = 'This is the generated image map for the Panorama360 ImageMap. ';
+		temp+= 'Press the Panorama360 button to export the HTML-file. ';
 		if (clipboard_enabled) {
 			temp+= 'Alternatively you can use the clipboard icon on the right. ';
 			temp+= '<img src="/imagemap/clipboard.gif" onclick="gui_toClipBoard()" style="float: right; margin: 4px; cursor: pointer;"/>';
 		}
-		temp+= 'Please note, that you have to copy the Image Map textarea of ';
-		temp+= '(<a href="https://niebert.github.io/panorama360" target="_blank" class="linkbutton">Panorama360</a>).';
+		temp+= '<hr> ';
+		temp+= '<a href="#" target="_blank" class="linkbutton" onclick="fillPanoramaParams()">Create Panorama360</a>.';
 	}
 	else {
 		temp = 'This is the generated image map HTML code. ';
