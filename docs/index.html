@@ -64,16 +64,18 @@
                                 </div>
 
                             </div>
-                            <button id="bSourceLocal" onclick="gui_loadImage(document.getElementById('src').getAttribute('rel'));return false;" class="source_accept" style="visibility:hidden">Load Image</button>
+                            <a href="#" id="bSourceLocal" onclick="gui_loadImage(document.getElementById('src').getAttribute('rel'));return false;" class="source_accept" style="visibility:hidden">Load Image</a>
                             <output id="list"></output>
                             <hr/>
 
                             <div class="source_desc">(2) an image on the Internet:</div>
                             <div class="source_url">
                               <input type="txt" id="source_url2" size="40" value="http://">
-                              <b><a href="https://commons.wikimedia.org" target="_blank">WikiMedia:</a></b> <input type="txt" style="width:200px" id="mediawiki_source" value="" onchange="setLoadImageURL(this.value)"><a href="javascript:el('mediawiki_source').value='Annweiler_Queich_05.JPG';setLoadImageURL('Annweiler_Queich_05.JPG')">[&lt;]</a><input type="button" value="OK" onclick="alert('Image URL to WikiMedia set!')"
+                              <b><a href="https://commons.wikimedia.org" target="_blank">WikiMedia:</a></b> <input type="txt" style="width:200px" id="mediawiki_source" value="" onchange="setLoadImageURL(this.value)">
+                              <a class="linkbutton" href="javascript:el('mediawiki_source').value='Annweiler_Queich_05.JPG';setLoadImageURL('Annweiler_Queich_05.JPG')">&lt;</a>
+                              <a class="linkbutton" href="javascript:alert('Image URL to WikiMedia set!')">OK</a>
                             </div>
-                            <button id="bSourceInternet" onclick="gui_loadImage(document.getElementById('source_url2').value);return false;" class="source_accept">Load Image</button>
+                            <a href="#" id="bSourceInternet" onclick="gui_loadImage(document.getElementById('source_url2').value);return false;" class="source_accept">Load Image</a>
                             <br/>
                             <hr/>
 
@@ -86,7 +88,7 @@
                                     <option value="img/sample4.jpg">sample 4</option>
                                 </select>
                             </div>
-                            <button id="bSourceInternet" onclick="gui_loadSampleImage(document.getElementById('source_url3').value);return false;" class="source_accept">Load Image</button>
+                            <a href="#" id="bSourceInternet" onclick="gui_loadSampleImage(document.getElementById('source_url3').value);return false;" class="source_accept">Load Image</a>
                             <br/>
                         </div>
                     </fieldset>
@@ -144,7 +146,7 @@
                                             <option value='%h'>Label with Link</option>
                                             <option value='%c'>Label with coords</option>
                                         </select>
-                                    	<button id="bCreateCode" onclick="gui_htmlShow();return false;" class="source_accept">Create Image Map</button>
+                                    	<a href="#"  id="bCreateCode" onclick="gui_htmlShow();return false;" class="source_accept">Create Image Map</a>
                                     </td>
                                 </tr>
                             </table>
