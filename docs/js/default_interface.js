@@ -344,15 +344,19 @@ function gui_htmlChanged(str) {
 		else if (out == 'wiki') {
 			document.getElementById('html_container').value = output_wiki();
 		}
-		else if (out == '360panorama') {
-			document.getElementById('html_container').value = output_360panorama();
+		else if (out == 'panorama') {
+			document.getElementById('html_container').value = output_panorama360();
 		}
 		else {
-			document.getElementById('html_container').value = str;
+			document.getElementById('html_container').value = output_default(str);
 		}
 	}
 }
 
+function output_default(pStr) {
+	// inject a newline for improved output
+	return pStr.replace(/></g,">\n<");
+}
 /**
  *	Called from imgmap with new status string.
  */
@@ -408,6 +412,17 @@ function gui_htmlShow() {
 	document.getElementById('html_container').focus();
 }
 
+function gui_loadSampleImage(pURL) {
+	// pURL is a relative URL to the sample image
+	gui_loadImage(pURL);
+	myimgmap.panoURL = "https://niebert.github.io/imgmap/"+pURL;
+};
+
+function gui_loadWebImage(pURL) {
+	// pURL is an absolute URL of an image referenced on Web Server
+	gui_loadImage(pURL);
+	myimgmap.panoURL = pURL;
+}
 /**
  *	Change the labeling mode directly in imgmap config then repaint all areas.
  */
@@ -481,6 +496,7 @@ function gui_outputChanged() {
 	var output = document.getElementById('dd_output').value;
 	if (output == 'css') {
 		//css output selected
+		// function output_css() generates the ImageMap
 		for (i=0; i<myimgmap.areas.length; i++) {
 			if (myimgmap.areas[i] && myimgmap.areas[i].shape != 'rect' && myimgmap.areas[i].shape != 'undefined') {
 				var others = true;
@@ -520,6 +536,7 @@ function gui_outputChanged() {
 		temp+= '(<a href="http://css-tricks.com/absolute-positioning-inside-relative-positioning/">read more</a>).';
 	}
 	else if (output == 'wiki') {
+		// function output_wiki() generates the ImageMap
 		temp = 'This is the generated image map Wiki code to use with MediaWiki ImageMap extension. ';
 		temp+= 'Click into the textarea below and press Ctrl+C to copy the code to your clipboard. ';
 		if (clipboard_enabled) {
@@ -528,6 +545,16 @@ function gui_outputChanged() {
 		}
 		temp+= 'Please note, that you might need to change the Image url ';
 		temp+= '(<a href="http://www.mediawiki.org/wiki/Extension:ImageMap">read more</a>).';
+	}
+	else if (output == 'panorama') {
+		temp = 'This is the generated image map can be used to for the Panorama360 ImageMap. ';
+		temp+= 'Click into the textarea below and press Ctrl+C to copy the code to your clipboard. ';
+		if (clipboard_enabled) {
+			temp+= 'Alternatively you can use the clipboard icon on the right. ';
+			temp+= '<img src="/imagemap/clipboard.gif" onclick="gui_toClipBoard()" style="float: right; margin: 4px; cursor: pointer;"/>';
+		}
+		temp+= 'Please note, that you have to copy the Image Map textarea of ';
+		temp+= '(<a href="https://niebert.github.io/panorama360" target="_blank">Panorama360</a>).';
 	}
 	else {
 		temp = 'This is the generated image map HTML code. ';
@@ -542,7 +569,8 @@ function gui_outputChanged() {
 	document.getElementById('output_help').innerHTML = temp;
 	//this will reload areas and sets dropdown restrictions
 	myimgmap.setMapHTML(myimgmap.getMapHTML());
-	outputmode = output;
+
+	outputmode = output.replace(/></g,">\n<");
 	return true;
 }
 
@@ -651,7 +679,7 @@ function output_wiki() {
 	html = '<imagemap>';
 	if (typeof myimgmap.pic != 'undefined') {
 		//html+= 'Image:' + myimgmap.pic.src + '|' + myimgmap.pic.title + '\n';
-		html+= 'Image:' + myimgmap.getMapId() + '|' + myimgmap.pic.title + '\n';
+		html+= 'Image:' + myimgmap.getMapId() + '|Subtitle of Image Map ' + myimgmap.getMapName() + '\n';
 	}
 
 	//foreach areas
@@ -663,7 +691,7 @@ function output_wiki() {
 			}
 		}
 	}
-	html+= '#' + myimgmap.waterMark + '\n</imagemap>';
+	html+= '</imagemap>\n\n' + myimgmap.waterMark + '';
 	//alert(html);
 	return html;
 }
@@ -682,24 +710,9 @@ desc bottom-left
 </imagemap>
 
  */
-function output_360panorama() {
+function output_panorama360() {
 	var html, coords;
-	html = '<imagemap>';
-	if (typeof myimgmap.pic != 'undefined') {
-		//html+= 'Image:' + myimgmap.pic.src + '|' + myimgmap.pic.title + '\n';
-		html+= 'Image:' + myimgmap.getMapId() + '|' + myimgmap.pic.title + '\n';
-	}
-
-	//foreach areas
-	for (var i=0; i<myimgmap.areas.length; i++) {
-		if (myimgmap.areas[i]) {
-			if (myimgmap.areas[i].shape && myimgmap.areas[i].shape != 'undefined') {
-				coords = myimgmap.areas[i].lastInput.split(',').join(' ');
-				html+= myimgmap.areas[i].shape + ' ' + coords + ' [[' + myimgmap.areas[i].ahref + '|' + myimgmap.areas[i].aalt + ']]\n';
-			}
-		}
-	}
-	html+= '#' + myimgmap.waterMark + '\n</imagemap>';
+	html = myimgmap.getMapInnerHTML("noscale");
 	//alert(html);
 	return html;
 }

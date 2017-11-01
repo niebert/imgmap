@@ -9,10 +9,25 @@ function el(pID) {
 	return document.getElementById(pID)
 }
 
+function fillPanoramaParams() {
+	el("panowidth").value = myimgmap.pic.width;
+	el("panoheight").value = myimgmap.pic.height;
+	if (myimgmap.panoURL == "") {
+		alert("Panorama URL contains not an Image that is online available. Use default image!")
+		el("panoimgurl").value = myimgmap.panoURLdefault;
+	} else {
+		el("panoimgurl").value = myimgmap.panoURL;
+	}
+	el("panoimgmap").value = el("html_container").value;
+	el("form2panorama").submit();
+}
+
 function setLoadImageURL(pFilename) {
 	var vURL = "https://en.wikipedia.org/wiki/Special:Redirect/file/"+pFilename;
-	console.log("setLoadImageURL('"+vURL+"')");
+	console.log("setLoadImageURL('"+vURL+"') for WikiMedia");
 	el("source_url2").value = vURL;
+	myimgmap.mapname = pFilename;
+	myimgmap.panoURL = vURL;
 }
 
 if (window.File && window.FileReader && window.FileList && window.Blob) {
@@ -34,6 +49,7 @@ function handleFileSelectInfo(evt) {
                   '</li>');
     }
     el('list').innerHTML = '<ul>' + output.join('') + '</ul>';
+		//myimgmap.mapname = escape(f.name);
 }
 
 //--- add event listener 'handleFileSelectInfo()' to file selector ---
@@ -74,6 +90,8 @@ function handleFileSelectInfo(evt) {
 					myimgmap.pic = vIMG;
 					myimgmap.mapname = escape(theFile.name);
 					myimgmap.mapid = escape(theFile.name);
+					// set Panorama360 URL to "" because a local file cannot be accessed in the Panorama 360 Image Starter
+					myimgmap.panoURL = "";
 					myimgmap.assignEvents2Image();
 			  };
       })(f);

@@ -71,7 +71,7 @@
                             <div class="source_desc">(2) an image on the Internet:</div>
                             <div class="source_url">
                               <input type="txt" id="source_url2" size="40" value="http://">
-                              <b>WikiMedia File:</b> <input type="txt" style="width:200px" id="mediawiki_source" value="" onchange="setLoadImageURL(this.value)"><a href="javascript:el('mediawiki_source').value='Annweiler_Queich_05.JPG';setLoadImageURL('Annweiler_Queich_05.JPG')">[&lt;]</a>
+                              <b><a href="https://commons.wikimedia.org" target="_blank">WikiMedia:</a></b> <input type="txt" style="width:200px" id="mediawiki_source" value="" onchange="setLoadImageURL(this.value)"><a href="javascript:el('mediawiki_source').value='Annweiler_Queich_05.JPG';setLoadImageURL('Annweiler_Queich_05.JPG')">[&lt;]</a><input type="button" value="OK" onclick="alert('Image URL to WikiMedia set!')"
                             </div>
                             <button id="bSourceInternet" onclick="gui_loadImage(document.getElementById('source_url2').value);return false;" class="source_accept">Load Image</button>
                             <br/>
@@ -86,7 +86,7 @@
                                     <option value="img/sample4.jpg">sample 4</option>
                                 </select>
                             </div>
-                            <button id="bSourceInternet" onclick="gui_loadImage(document.getElementById('source_url3').value);return false;" class="source_accept">Load Image</button>
+                            <button id="bSourceInternet" onclick="gui_loadSampleImage(document.getElementById('source_url3').value);return false;" class="source_accept">Load Image</button>
                             <br/>
                         </div>
                     </fieldset>
@@ -131,6 +131,7 @@
                                             <option value='imagemap'>Standard imagemap</option>
                                             <option value='css'>CSS imagemap</option>
                                             <option selected value='wiki'>Wiki imagemap</option>
+                                            <option value='panorama'>Panorama360 imagemap</option>
                                         </select>
                                     </td>
                                     <td align="right" width="40%">
@@ -162,16 +163,25 @@
                         <div>
                             <div id="output_help">
                             </div>
-                            <textarea id="html_container" style="font-family: Consolas, Courier New, monospace;"></textarea>
+                            <input type="button" id="bSubmitPanorama" value="Display Panorama" onclick="fillPanoramaParams()">
+                            <textarea id="html_container" name="imgmap" style="font-family: Consolas, Courier New, monospace;"></textarea>
                         </div>
                     </fieldset>
                 </form>
+                <form id="form2panorama"   method="get" action="https://niebert.github.io/panorama360/index.html">
+                  <input type="text" name="width" id="panowidth" value="">
+                  <input type="text" name="height" id="panoheight" value="">
+                  <input type="text" name="imgurl" id="panoimgurl" value="">
+                  <textarea name="imgmap" id="panoimgmap" style="font-family: Consolas, Courier New, monospace;"></textarea>
+                </form>
                 <div id="sample_image_div" style="display:none">
+                  <!-- loaded hidden so that the images are available for the sample selector -->
                   <img id="sample1"  src="img/sample1.jpg">
                   <img id="sample2"  src="img/sample2.jpg">
                   <img id="sample3"  src="img/sample3.jpg">
                   <img id="sample4"  src="img/sample4.jpg">
                 </div>
+                <script src="js/linkparam.js"></script>
                 <script src="js/imgmap.js"></script>
                 <script src="js/imgupload.js"></script>
                 <script src="js/default_interface.js"></script>
@@ -196,7 +206,16 @@
 
         </div>
     </div>
-
+    <script>
+    //-------------------------------------------------------
+    // LINK PARAMETER: Evaluation link parameter
+    var vLinkParam = new LinkParam();
+    vLinkParam.init(document);
+    if (vLinkParam.exists("imgurl")) {
+        document.getElementById("source_url2").value = vLinkParam.getValue("imgurl");
+    };
+    //-------------------------------------------------------
+    </script>
 
 
 </body>

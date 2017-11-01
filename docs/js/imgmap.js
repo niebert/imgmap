@@ -54,7 +54,7 @@ function imgmap(config) {
 	this.version = "2.2";
 
 	/** Build date of imgmap */
-	this.buildDate = "2009/08/12 22:18";
+	this.buildDate = "2017/11/02 22:18";
 
 	/** Sequential build number of imgmap */
 	this.buildNumber = "113";
@@ -80,6 +80,8 @@ function imgmap(config) {
 	/**	Associative array to hold bound event handlers */
 	this.eventHandlers  = {};
 
+	this.panoURL = "";
+	this.panoURLdefault = "https://upload.wikimedia.org/wikipedia/commons/4/4b/Rapperswil_SG_Panorama_Februar_2011.jpg";
 	this.currentid = 0;
 	this.draggedId  = null;
 	this.selectedId = null;
@@ -101,7 +103,7 @@ function imgmap(config) {
 
 
 	/** watermark to attach to output */
-	this.waterMark  = '<!-- Created by forked Online Image Map Editor https://niebert.github.io/imgmap -->';
+	this.waterMark  = '<!-- Created by Image Map Editor https://niebert.github.io/imgmap -->';
 
 	/** global scale of areas (1-normal, 2-doubled, 0.5-half, etc.) */
 	this.globalscale = 1;
