@@ -81,7 +81,7 @@ function imgmap(config) {
 	this.eventHandlers  = {};
 
 	this.panoURL = "";
-	this.panoURLdefault = "https://upload.wikimedia.org/wikipedia/commons/4/4b/Rapperswil_SG_Panorama_Februar_2011.jpg";
+	this.panoURLdefault = "https://upload.wikimedia.org/wikipedia/commons/4/43/Panorama_Schloss_Durlach.jpg";
 	this.currentid = 0;
 	this.draggedId  = null;
 	this.selectedId = null;

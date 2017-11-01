@@ -554,7 +554,7 @@ function gui_outputChanged() {
 			temp+= '<img src="/imagemap/clipboard.gif" onclick="gui_toClipBoard()" style="float: right; margin: 4px; cursor: pointer;"/>';
 		}
 		temp+= 'Please note, that you have to copy the Image Map textarea of ';
-		temp+= '(<a href="https://niebert.github.io/panorama360" target="_blank">Panorama360</a>).';
+		temp+= '(<a href="https://niebert.github.io/panorama360" target="_blank" class="linkbutton">Panorama360</a>).';
 	}
 	else {
 		temp = 'This is the generated image map HTML code. ';
