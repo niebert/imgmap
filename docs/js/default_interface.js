@@ -712,7 +712,7 @@ desc bottom-left
  */
 function output_panorama360() {
 	var html, coords;
-	html = myimgmap.getMapInnerHTML("noscale");
+	html = myimgmap.getMapInnerHTML();
 	//alert(html);
 	return html;
 }
