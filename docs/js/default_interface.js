@@ -554,7 +554,7 @@ function gui_outputChanged() {
 			temp+= '<img src="/imagemap/clipboard.gif" onclick="gui_toClipBoard()" style="float: right; margin: 4px; cursor: pointer;"/>';
 		}
 		temp+= '<hr> ';
-		temp+= '<a href="#" target="_blank" class="linkbutton" onclick="fillPanoramaParams()">Create Panorama360</a>.';
+		temp+= '<a href="#" target="_blank" class="linkbutton" onclick="fillPanoramaParams();return false">Create Panorama360</a>';
 	}
 	else {
 		temp = 'This is the generated image map HTML code. ';
