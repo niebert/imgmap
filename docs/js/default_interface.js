@@ -348,7 +348,8 @@ function gui_htmlChanged(str) {
 			document.getElementById('html_container').value = output_panorama360();
 		}
 		else {
-			document.getElementById('html_container').value = output_default(str);
+			//document.getElementById('html_container').value = output_default(str);
+			document.getElementById('html_container').value = output_htmlpage(str);
 		}
 	}
 }
@@ -630,6 +631,16 @@ myimgmap.addEvent(document.getElementById('html_container'), 'focus', gui_htmlFo
 
 /** OUTPUT FUNCTIONS **********************************************************/
 
+
+function output_htmlpage() {
+	var vOut = "";
+	vOut += "<img src=\""+myimgmap.getMapName()+"\" alt=\"Info: "+myimgmap.getMapName()+"\" usemap=\"#"+myimgmap.getMapId()+"\">";
+	vOut += "\n<map name=\""+myimgmap.getMapId()+"\">";
+	vOut +="\n"+myimgmap.getMapInnerHTML();
+	vOut += "\n</map>";
+	return vOut;
+}
+
 /**
  *	Just grab the areas array and do whatever you wish.
  */
@@ -679,7 +690,7 @@ function output_wiki() {
 	html = '<imagemap>';
 	if (typeof myimgmap.pic != 'undefined') {
 		//html+= 'Image:' + myimgmap.pic.src + '|' + myimgmap.pic.title + '\n';
-		html+= 'Image:' + myimgmap.getMapId() + '|Subtitle of Image Map ' + myimgmap.getMapName() + '\n';
+		html+= 'Image:' + myimgmap.getMapName() + '|Subtitle of Image Map ' + myimgmap.getMapName() + '\n';
 	}
 
 	//foreach areas

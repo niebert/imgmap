@@ -3,14 +3,18 @@
 With the imagemap editor you can easily draw ALL the standard image map shapes (rectangle, circle, polygon),
 and you can have full control over the generated HTML code as well.
 
-* [Online Image Editor](https://niebert.github.io/imgmap/index.html)
+* [Online Image Map Editor](https://niebert.github.io/imgmap/index.html)
 
 The Online Image Editor runs in your browser and the images are not uploaded to any server. You can download the repository.
 
 
 
 ## Purpose of the Fork
-change the User Interface provided by Adam Maschek:
+The fork is based on the ImageMap-Library by Adam Maschek.
+The purpose of the fork is to change the User Interface for MediaWiki imagemaps and [Panorama360](https://www.github.com/niebert/panorama360) image maps:
+* Optimize workflow for ImageMap generation for users
+* use JSZip to export a full HTML5 ImageMap Project.
+* use FileSaver.js to save project files
 * set the default imagemap main export format to the MediaWiki
 * use the javascript code in an HTML file the docs/ folder in GitHub,
 * rename buttons and change layout for the Source Selector,
@@ -39,6 +43,9 @@ The editor is currently tested to work in Chrome, Firefox, Safari, Opera 9+ and 
 * [Adapted Source code of Image Editor by Adam Maschek](https://github.com/niebert/imgmap) in docs folder
 * [Download Link of Adapted ImageMap Editor](https://github.com/niebert/imgmap/archive/master.zip)
 * [Loading Images into a HTML5 WebApp](https://www.html5rocks.com/en/tutorials/file/dndfiles/) needed for uploading local images provided by  Eric Bidelman
+* [FileSaver.js](https://github.com/eligrey/FileSaver.js) by Eli Grey to emulate saving file (with the Download features of webbrowsers) in WebApps.
+* [JSZip](http://stuartk.com/jszip) to bundle the HTML5 files necessary for complete working example of the image map or the panorama image.
+* [JSZipUtils]() to download resources from a source.
 
 ## Acknowledgement
 Special thanks to [Adam Maschek](https://github.com/maschek) for sharing the code for Javascript ImageMap Editor on Github.

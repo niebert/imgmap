@@ -15,14 +15,17 @@
     <!--
     <script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
 	-->
-	<script src="js/jquery-1.12.3.min.js"></script>
+  <script src="js/handlebars.min.js"></script>
+  <script src="js/filesaver.min.js"></script>
+  <script src="js/jszip.min.js"></script>
+  <script src="js/jquery-1.12.3.min.js"></script>
 
     <title>Online Image Map Editor </title>
 </head>
 
 <body bgcolor="#f2f2f2">
 
-    <div id="maindivcontainer">
+    <div id="maindivcontainer"  margins="50px">
         <div id="maindiv">
             <h1 id="titletext">Online Image Map Editor for MediaWikis</h1>
             <i>The editor uses HTML and Javascript to create the imagemap interactively in your browser - No images are uploaded to a server</i>
@@ -169,7 +172,7 @@
                         </div>
                     </fieldset>
                 </form>
-                <form id="form2panorama" Xstyle="display:none"  method="get" action="https://niebert.github.io/panorama360/index.html" target="_blank">
+                <form id="form2panorama" Xstyle="display:none"  method="get" action="https://niebert.github.io/panorama360/index.html" target="_blank" style="display:none">
                   <input type="text" name="width" id="panowidth" value="">
                   <input type="text" name="height" id="panoheight" value="">
                   <input type="text" name="imgurl" id="panoimgurl" value="">

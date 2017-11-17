@@ -875,9 +875,15 @@ imgmap.prototype.getMapInnerHTML = function(flags) {
  */
 imgmap.prototype.getMapName = function() {
 	if (this.mapname === '') {
-		if (this.mapid !== '') {return this.mapid;}
-		var now = new Date();
-		this.mapname = 'imgmap' + now.getFullYear() + (now.getMonth()+1) + now.getDate() + now.getHours() + now.getMinutes() + now.getSeconds();
+		if (this.mapid !== '') {
+			this.mapname = this.mapid;
+		} else {
+			this.mapname = this.panoURL
+		};
+		if (!this.mapname) {
+			var now = new Date();
+			this.mapname = 'imgmap' + now.getFullYear() + (now.getMonth()+1) + now.getDate() + now.getHours() + now.getMinutes() + now.getSeconds();
+		}
 	}
 	return this.mapname;
 };
