@@ -899,7 +899,8 @@ imgmap.prototype.getMapName = function() {
 imgmap.prototype.getMapId = function() {
 	if (this.mapid === '') {
 		this.mapid = this.getMapName();
-	}
+		this.mapid = this.mapid.replace(/[^A-Z_a-z0-9]/g,"_");
+	};
 	return this.mapid;
 };
 
