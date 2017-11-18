@@ -881,13 +881,16 @@ imgmap.prototype.getMapName = function() {
 			this.mapname = this.panoURL
 		};
 		if (!this.mapname) {
-			var now = new Date();
-			this.mapname = 'imgmap' + now.getFullYear() + (now.getMonth()+1) + now.getDate() + now.getHours() + now.getMinutes() + now.getSeconds();
+			this.mapname = this.getNewMapId();
 		}
 	}
 	return this.mapname;
 };
 
+imgmap.prototype.getNewMapId = function() {
+	var now = new Date();
+	return 'imgmap' + now.getFullYear() + (now.getMonth()+1) + now.getDate() + now.getHours() + now.getMinutes() + now.getSeconds();
+};
 
 /**
  *	Get the map id of the current imagemap.
@@ -897,9 +900,8 @@ imgmap.prototype.getMapName = function() {
  *	@return	The id of the map.
  */
 imgmap.prototype.getMapId = function() {
-	if (this.mapid === '') {
-		this.mapid = this.getMapName();
-		this.mapid = this.mapid.replace(/[^A-Z_a-z0-9]/g,"_");
+	if (!(this.hasOwnProperty("mapid")) || (this.mapid === '')) {
+		this.mapid = this.getNewMapId();
 	};
 	return this.mapid;
 };

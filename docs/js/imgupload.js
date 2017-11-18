@@ -27,6 +27,7 @@ function setLoadImageURL(pFilename) {
 	console.log("setLoadImageURL('"+vURL+"') for WikiMedia");
 	el("source_url2").value = vURL;
 	myimgmap.mapname = pFilename;
+	myimgmap.mapid = pFilename.replace(/[^A-Za-z0-9]/g,"");
 	myimgmap.panoURL = vURL;
 }
 
@@ -89,7 +90,7 @@ function handleFileSelectInfo(evt) {
 					// set ImageMap Editor Picture to
 					myimgmap.pic = vIMG;
 					myimgmap.mapname = escape(theFile.name);
-					myimgmap.mapid = escape(theFile.name);
+					myimgmap.mapid = (escape(theFile.name)).replace(/[^A-Za-z0-9]/g,"");
 					// set Panorama360 URL to "" because a local file cannot be accessed in the Panorama 360 Image Starter
 					myimgmap.panoURL = "";
 					myimgmap.assignEvents2Image();
