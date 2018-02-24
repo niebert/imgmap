@@ -7,7 +7,9 @@ and you can have full control over the generated HTML code as well.
 
 The Online Image Editor runs in your browser and the images are not uploaded to any server. You can download the repository.
 
-
+## Comments
+* Close Polygon with SHIFT-Click for last point of polygon. Other points.
+* Standard output image map is "Wiki Imagemap"
 
 ## Purpose of the Fork
 The fork is based on the ImageMap-Library by Adam Maschek.
