@@ -54,7 +54,7 @@ function handleFileSelectInfo(evt) {
 }
 
 //--- add event listener 'handleFileSelectInfo()' to file selector ---
-//el('file-chooser').addEventListener('change', handleFileSelectInfo, false);
+el('file-chooser').addEventListener('change', handleFileSelect, false);
 
  function handleFileSelect(evt) {
     var files = evt.target.files; // FileList object
@@ -91,9 +91,12 @@ function handleFileSelectInfo(evt) {
 					myimgmap.pic = vIMG;
 					myimgmap.mapname = escape(theFile.name);
 					myimgmap.mapid = (escape(theFile.name)).replace(/[^A-Za-z0-9]/g,"");
+					el("upload_filename").value = theFile.name;
 					// set Panorama360 URL to "" because a local file cannot be accessed in the Panorama 360 Image Starter
 					myimgmap.panoURL = "";
+					el("upload_filename").style.display = "block";
 					myimgmap.assignEvents2Image();
+					gui_display_edit_interface();
 			  };
       })(f);
 
@@ -103,7 +106,7 @@ function handleFileSelectInfo(evt) {
   }
 
 //--- add event listener 'handleFileSelectInfo()' to file selector ---
-el('file-chooser').addEventListener('change', handleFileSelect, false);
+//el('file-chooser').addEventListener('change', handleFileSelect, false);
 
 function reset_ImageMap_Container() {
 	el('dd_zoom').value = '1';

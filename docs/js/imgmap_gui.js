@@ -212,6 +212,21 @@ function gui_input_change(e) {
 	}
 }
 
+function gui_format_select(pValue) {
+	//alert(pValue);
+	switch (pValue) {
+		case "poly":
+			alert("Close Polygon with SHIFT-Click\nfor last point!")
+		break;
+		default:
+
+	}
+}
+
+function gui_display_edit_interface() {
+	el("field_status").style.display   = "block";
+	el("field_edit_map").style.display = "block";
+}
 /**
  *	Called from imgmap when a new area is added.
  */
@@ -232,7 +247,7 @@ function gui_addArea(id) {
 	//temp+= '<input type="checkbox" name="img_active" class="img_active" id="img_active_'+id+'" value="'+id+'">';
 	//could be checkbox in the future
 	temp+= '<input type="radio" name="img_active" class="img_active" id="img_active_'+id+'" value="'+id+'">';
-	temp+= '<select name="img_shape" class="img_shape">';
+	temp+= '<select name="img_shape" class="img_shape" onchange="gui_format_select(this.value)">';
 	temp+= '<option value="rect">rectangle</option>';
 	if (document.getElementById('dd_output').value != 'css') {
 		temp+= '<option value="circle">circle</option>';
@@ -417,12 +432,14 @@ function gui_loadSampleImage(pURL) {
 	// pURL is a relative URL to the sample image
 	gui_loadImage(pURL);
 	myimgmap.panoURL = "https://niebert.github.io/imgmap/"+pURL;
+	//gui_display_edit_interface();
 };
 
 function gui_loadWebImage(pURL) {
 	// pURL is an absolute URL of an image referenced on Web Server
 	gui_loadImage(pURL);
 	myimgmap.panoURL = pURL;
+	//gui_display_edit_interface();
 }
 /**
  *	Change the labeling mode directly in imgmap config then repaint all areas.
@@ -488,6 +505,7 @@ function gui_loadImage(src) {
 		delete myimgmap.pic;
 	};
 	myimgmap.loadImage(src);
+	gui_display_edit_interface();
 }
 
 function gui_outputChanged() {
