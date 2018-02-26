@@ -700,6 +700,7 @@ imgmap.prototype.prepareLoadImage = function() {
 };
 
 
+
 /**
  *	We use this when there is an existing image object we want to handle with imgmap.
  *	Mainly used in highlighter mode.
